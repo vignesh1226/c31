@@ -1,5 +1,5 @@
 var snake;
-var rez = 20;
+var v = 20;
 var food;
 var w;
 var h;
@@ -9,8 +9,8 @@ function setup() {
   createCanvas(400, 400);
 
   //defining w and h
-  w = floor(width / rez);
-  h = floor(height / rez);
+  w = floor(width / v);
+  h = floor(height / v);
 
   //number of frames the snake covers per second(speed)
   frameRate(3);
@@ -48,7 +48,7 @@ function keyPressed() {
 
 function draw() {
   //floor scale
-  scale(rez);
+  scale(v);
   
   //background
   background(220);
