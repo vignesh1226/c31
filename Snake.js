@@ -1,4 +1,5 @@
 class Snake {
+  //creating a constructor
   constructor() {
       this.body = [];
       this.body[0] = createVector(floor(w/2), floor(h/2));
@@ -6,12 +7,12 @@ class Snake {
       this.ydir = 0;
       this.len = 0;
     }
-    
+    // direction
     setDir(x, y) {
       this.xdir = x;
       this.ydir = y;
     }
-    
+    //increasing the size of the snake by one square when it eats a bug
     update() {
         var head = this.body[this.body.length-1].copy();
       this.body.shift();
@@ -19,13 +20,13 @@ class Snake {
       head.y += this.ydir;
       this.body.push(head);
     }
-    
+    //increasing the size of the snake by one square when it eats a bug
     grow() {
       var head = this.body[this.body.length-1].copy();
       this.len++;
       this.body.push(head);
     }
-    
+    //blanking or finishing the game
     end() {
       var x = this.body[this.body.length-1].x;
       var y = this.body[this.body.length-1].y;
@@ -41,7 +42,7 @@ class Snake {
       }
       return false;
     }
-    
+    //eating the bug
     eat(pos) {
       var x = this.body[this.body.length-1].x;
       var y = this.body[this.body.length-1].y;
@@ -53,7 +54,7 @@ class Snake {
       
       return false;
     }
-    
+    //displaying the snake
     display() {
         for(var i = 0; i < this.body.length; i++) {
         fill(0);
